@@ -565,18 +565,18 @@
       box-shadow: 0 0 0 4px var(--accent-soft);
     }
 
-    .project-content { padding: clamp(28px, 3vw, 34px) clamp(24px, 3vw, 30px) 34px; }
-    .project-intro { margin: 18px 0; }
-    .project-facts { margin: 14px 0; }
-    .project-tags { margin-top: 18px; }
+    .project-content { padding: clamp(26px, 3vw, 30px) clamp(22px, 3vw, 30px) 30px; }
+    .project-intro { margin: 16px 0; }
+    .project-facts { margin: 12px 0; }
+    .project-tags { margin-top: 12px; }
 
-    .project-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
-    .project-block { padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: rgba(13, 20, 27, .62); }
+    .project-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+    .project-block { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: rgba(13, 20, 27, .38); }
     .project-block h4 { margin: 0 0 12px; color: var(--text); font-size: 15px; }
     .clean-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 
-    .architecture-image { margin: 22px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #101922; }
-    .architecture-image img { display: block; width: 100%; aspect-ratio: 3600 / 1760; object-fit: contain; background: #f4f7f9; }
+    .architecture-image { margin: 16px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #f4f7f9; }
+    .architecture-image img { display: block; width: 100%; height: auto; max-height: 520px; aspect-ratio: 3600 / 1760; object-fit: contain; background: #f4f7f9; }
     .architecture-image figcaption { padding: 10px 14px; color: var(--muted); font: 600 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
     .architecture-image figcaption strong { color: var(--text); }
     .architecture-details { margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(13, 20, 27, .48); }
@@ -585,17 +585,18 @@
     .architecture-details img { display: block; width: 100%; height: auto; object-fit: contain; background: #f4f7f9; }
     .architecture-details figcaption { padding: 9px 14px; color: var(--muted); font-size: 12px; }
 
-    .project-showcase, .drone-showcase { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, .75fr); gap: 10px; margin-top: 22px; align-items: start; }
+    .project-showcase, .drone-showcase { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, .75fr); gap: 8px; margin-top: 16px; align-items: start; }
     .project-media { position: relative; min-height: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
-    .primary-video { aspect-ratio: 8 / 5; }
+    .primary-video { aspect-ratio: 16 / 9; }
     .landscape-video { aspect-ratio: 16 / 9; }
     .project-photo { aspect-ratio: 3 / 2; }
+    .project-showcase .project-photo, .drone-showcase .project-photo { aspect-ratio: 16 / 9; }
     .project-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .project-photo.focus-camera img { object-position: 50% 43%; }
-    .landscape-video video, .portrait-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #101922; }
-    .photo-stack { display: grid; gap: 10px; }
+    .landscape-video video, .portrait-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: var(--panel); }
+    .photo-stack { display: grid; gap: 8px; }
     .project-media figcaption { position: absolute; left: 8px; bottom: 8px; max-width: calc(100% - 16px); padding: 4px 7px; border-radius: 5px; color: #dce6ee; background: rgba(7, 11, 16, .56); font: 600 10px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .03em; pointer-events: none; backdrop-filter: blur(6px); }
-    .secondary-video-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(168px, .34fr); gap: 10px; margin-top: 10px; align-items: end; }
+    .secondary-video-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(168px, .34fr); gap: 8px; margin-top: 8px; align-items: end; }
     .portrait-video { width: min(100%, 240px); aspect-ratio: 9 / 16; justify-self: end; }
 
     .more-media { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; background: rgba(13, 20, 27, .42); }
@@ -779,8 +780,9 @@
       .stack-grid, .experience-card, .bullet-grid, .project-columns { grid-template-columns: 1fr; }
       .project-showcase, .drone-showcase { grid-template-columns: 1fr; }
       .photo-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .secondary-video-grid { grid-template-columns: minmax(0, 1fr) 96px; }
-      .portrait-video { width: 100%; }
+      .secondary-video-grid { grid-template-columns: 1fr; gap: 8px; }
+      .secondary-video-grid .landscape-video { width: 100%; }
+      .secondary-video-grid .portrait-video { width: min(58vw, 220px); justify-self: center; }
       .experience-meta { border-right: 0; border-bottom: 1px solid var(--line); }
       .project-head { grid-template-columns: 1fr; gap: 18px; }
       .role-badge { width: fit-content; }
@@ -907,71 +909,30 @@
                 <span>57600 bps · Modbus RTU</span><span>640 × 640 INT8 · RKNN</span><span>约 57 ms · 板端推理</span><span>1280 × 720@30 fps · H.264/RTSP</span><span>端到端延迟约 240 ms</span>
               </div>
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">Android</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">H.264 / RTSP</span><span class="tag">YOLOv5 / RKNN</span></div>
-              <div class="project-columns">
-                <section class="project-block">
-                  <h4>本人主要负责</h4>
-                  <ul class="clean-list"><li>整体功能需求拆解、方案集成与端到端联调</li><li>使用示波器和逻辑分析仪确认 57600 波特率、Modbus RTU 协议及设备地址 01</li><li>完成电机速度控制、状态读取及 MAVLink 遥测接入</li><li>完成 RV1106 环境配置，并参与视觉检测、Android 功能的运行验证与联调</li><li>负责代码验证、配置修改、模型部署与设备问题排查</li></ul>
-                </section>
-                <section class="project-block">
-                  <h4>关键实现 / 工程结果</h4>
-                  <ul class="clean-list"><li>完成 FreeRTOS 遥控解析、运动控制与状态回传任务框架配置和整机验证</li><li>完成 YOLOv5 数据集训练、模型转换与 RKNN 板端检测验证</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 码流，并完成显示验证</li><li>解决电机压降引发的图传重启与 DMA 未启用导致的状态回传异常</li><li>实现并验证视觉跟随、接近目标及手动 / 自动模式切换</li></ul>
-                </section>
-              </div>
-
               <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
                 <img src="assets/s1-end-to-end-architecture.png" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
                 <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 遥控、STM32/FreeRTOS 控制、RV1106 视觉推理和 H.264/RTSP 图传的连接关系。</figcaption>
               </figure>
-              <details class="architecture-details">
-                <summary>查看 FreeRTOS / MAVLink 控制链路详情</summary>
-                <figure>
-                  <img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy">
-                  <figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption>
-                </figure>
-              </details>
 
               <div class="project-showcase" aria-label="途 S1 主演示与实车照片">
-                <figure class="project-media primary-video landscape-video">
-                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频">
-                    <source src="assets/s1-balloon-detection.mp4" type="video/mp4">
-                    当前浏览器不支持视频播放。
-                  </video>
-                  <figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption>
-                </figure>
+                <figure class="project-media primary-video landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频"><source src="assets/s1-balloon-detection.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption></figure>
                 <div class="photo-stack" aria-label="途 S1 实车照片">
-                  <figure class="project-media project-photo focus-camera">
-                    <img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视摄像头模组" loading="lazy">
-                    <figcaption>RV1106 视觉车 · 摄像头模组</figcaption>
-                  </figure>
-                  <figure class="project-media project-photo">
-                    <img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车的前视结构" loading="lazy">
-                    <figcaption>网络摄像头车 · 前视结构</figcaption>
-                  </figure>
+                  <figure class="project-media project-photo focus-camera"><img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视摄像头模组" loading="lazy"><figcaption>RV1106 视觉车 · 摄像头模组</figcaption></figure>
+                  <figure class="project-media project-photo"><img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车的前视结构" loading="lazy"><figcaption>网络摄像头车 · 前视结构</figcaption></figure>
                 </div>
               </div>
-              <details class="more-media">
-                <summary>更多实物照片 <span>+2</span></summary>
-                <div class="more-photo-grid">
-                  <button class="media-thumb" type="button" data-lightbox="assets/s1-black-car-top.jpg" data-alt="RV1106 视觉小车顶视布线"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视布线" loading="lazy"></button>
-                  <button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button>
-                </div>
-              </details>
+
+              <div class="project-columns">
+                <section class="project-block"><h4>本人主要负责</h4><ul class="clean-list"><li>整体功能需求拆解、方案集成与端到端联调</li><li>使用示波器和逻辑分析仪确认 57600 波特率、Modbus RTU 协议及设备地址 01</li><li>完成电机速度控制、状态读取及 MAVLink 遥测接入</li><li>完成 RV1106 环境配置，并参与视觉检测、Android 功能的运行验证与联调</li><li>负责代码验证、配置修改、模型部署与设备问题排查</li></ul></section>
+                <section class="project-block"><h4>关键实现 / 工程结果</h4><ul class="clean-list"><li>完成 FreeRTOS 遥控解析、运动控制与状态回传任务框架配置和整机验证</li><li>完成 YOLOv5 数据集训练、模型转换与 RKNN 板端检测验证</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 码流，并完成显示验证</li><li>解决电机压降引发的图传重启与 DMA 未启用导致的状态回传异常</li><li>实现并验证视觉跟随、接近目标及手动 / 自动模式切换</li></ul></section>
+              </div>
+
+              <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption></figure></details>
               <div class="secondary-video-grid" aria-label="途 S1 次要演示视频">
-                <figure class="project-media landscape-video">
-                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频">
-                    <source src="assets/s1-direction-tracking.mp4" type="video/mp4">
-                    当前浏览器不支持视频播放。
-                  </video>
-                  <figcaption>方向追踪演示 · 默认 1.25×</figcaption>
-                </figure>
-                <figure class="project-media portrait-video">
-                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频">
-                    <source src="assets/s1-control-demo.mp4" type="video/mp4">
-                    当前浏览器不支持视频播放。
-                  </video>
-                  <figcaption>控制演示 · 1.25×</figcaption>
-                </figure>
+                <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/s1-direction-tracking.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
+                <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/s1-control-demo.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
               </div>
+              <details class="more-media"><summary>更多实物照片 <span>+2</span></summary><div class="more-photo-grid"><button class="media-thumb" type="button" data-lightbox="assets/s1-black-car-top.jpg" data-alt="RV1106 视觉小车顶视布线"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视布线" loading="lazy"></button><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button></div></details>
             </div>
           </article>
 

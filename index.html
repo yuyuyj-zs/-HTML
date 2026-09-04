@@ -182,10 +182,10 @@
     main { overflow: clip; }
 
     .hero {
-      min-height: calc(100vh - 72px);
+      min-height: min(78vh, 760px);
       display: grid;
       align-items: center;
-      padding: 86px 0 76px;
+      padding: 70px 0 58px;
     }
 
     .hero-grid {
@@ -565,164 +565,49 @@
       box-shadow: 0 0 0 4px var(--accent-soft);
     }
 
-    .project-content { padding: clamp(28px, 5vw, 54px); }
+    .project-content { padding: clamp(28px, 3vw, 34px) clamp(24px, 3vw, 30px) 34px; }
+    .project-intro { margin: 18px 0; }
+    .project-facts { margin: 14px 0; }
+    .project-tags { margin-top: 18px; }
 
-    .project-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 30px;
-      align-items: start;
-    }
+    .project-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+    .project-block { padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: rgba(13, 20, 27, .62); }
+    .project-block h4 { margin: 0 0 12px; color: var(--text); font-size: 15px; }
+    .clean-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 
-    .project-number {
-      margin: 0 0 12px;
-      color: var(--accent-2);
-      font: 700 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .1em;
-    }
+    .architecture-image { margin: 22px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #101922; }
+    .architecture-image img { display: block; width: 100%; aspect-ratio: 3600 / 1760; object-fit: contain; background: #f4f7f9; }
+    .architecture-image figcaption { padding: 10px 14px; color: var(--muted); font: 600 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .architecture-image figcaption strong { color: var(--text); }
+    .architecture-details { margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(13, 20, 27, .48); }
+    .architecture-details summary { padding: 11px 14px; color: var(--muted); cursor: pointer; font: 650 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .architecture-details figure { margin: 0; border-top: 1px solid var(--line); }
+    .architecture-details img { display: block; width: 100%; height: auto; object-fit: contain; background: #f4f7f9; }
+    .architecture-details figcaption { padding: 9px 14px; color: var(--muted); font-size: 12px; }
 
-    .project h3 {
-      max-width: 760px;
-      margin: 0;
-      font-size: clamp(26px, 3.4vw, 40px);
-      line-height: 1.25;
-      letter-spacing: -.025em;
-    }
+    .project-showcase, .drone-showcase { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, .75fr); gap: 10px; margin-top: 22px; align-items: start; }
+    .project-media { position: relative; min-height: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+    .primary-video { aspect-ratio: 8 / 5; }
+    .landscape-video { aspect-ratio: 16 / 9; }
+    .project-photo { aspect-ratio: 3 / 2; }
+    .project-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .project-photo.focus-camera img { object-position: 50% 43%; }
+    .landscape-video video, .portrait-video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #101922; }
+    .photo-stack { display: grid; gap: 10px; }
+    .project-media figcaption { position: absolute; left: 8px; bottom: 8px; max-width: calc(100% - 16px); padding: 4px 7px; border-radius: 5px; color: #dce6ee; background: rgba(7, 11, 16, .56); font: 600 10px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .03em; pointer-events: none; backdrop-filter: blur(6px); }
+    .secondary-video-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(168px, .34fr); gap: 10px; margin-top: 10px; align-items: end; }
+    .portrait-video { width: min(100%, 240px); aspect-ratio: 9 / 16; justify-self: end; }
 
-    .role-badge {
-      min-width: 160px;
-      padding: 11px 14px;
-      border: 1px solid rgba(85, 214, 190, .35);
-      border-radius: 9px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      font: 700 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
-      text-align: center;
-    }
-
-    .project-intro {
-      max-width: 890px;
-      margin: 24px 0 28px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .project-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
-    .project-facts span { padding: 7px 10px; border: 1px solid rgba(85, 214, 190, .24); border-radius: 999px; color: #c8e9e1; background: rgba(85, 214, 190, .06); font: 650 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .diagram-grid { display: grid; grid-template-columns: 1.42fr 1fr; gap: 14px; margin: 22px 0 0; }
-    .diagram-card { overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: rgba(13, 20, 27, .72); }
-    .diagram-card img { display: block; width: 100%; height: auto; background: #fff; }
-    .diagram-card figcaption { padding: 12px 14px; color: var(--muted); font: 600 12px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .diagram-card figcaption strong { display: block; margin-bottom: 3px; color: var(--text); font-size: 13px; }    .system-flow {
-      display: grid;
-      grid-template-columns: repeat(7, minmax(90px, 1fr));
-      gap: 18px;
-      margin: 34px 0;
-    }
-
-    .flow-node {
-      position: relative;
-      min-height: 76px;
-      display: grid;
-      place-items: center;
-      padding: 12px 8px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      color: #d2dce4;
-      background: #0d141b;
-      font: 650 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
-      text-align: center;
-    }
-
-    .flow-node:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      left: calc(100% + 5px);
-      color: var(--accent);
-      font-size: 14px;
-    }
-
-    .project-columns {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 34px;
-    }
-
-    .project-block {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: rgba(13, 20, 27, .62);
-    }
-
-    .project-block h4 {
-      margin: 0 0 16px;
-      color: var(--text);
-      font-size: 15px;
-    }
-
-    .clean-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .project-tags { margin-top: 28px; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    /* 真实项目图片 / 视频共用的媒体卡片 */
-    .project-media {
-      position: relative;
-      min-height: 220px;
-      margin: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: #05080c;
-    }
-
-    .project-media.wide { grid-column: 1 / -1; }
-    .project-media.portrait video {
-      height: 300px;
-      min-height: 0;
-    }
-    .project-media.photo img {
-      height: 260px;
-      min-height: 0;
-    }
-
-    .project-media img,
-    .project-media video {
-      width: 100%;
-      min-height: 220px;
-      display: block;
-      object-fit: contain;
-      background: #05080c;
-    }
-
-    .project-media figcaption {
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      padding: 5px 9px;
-      border-radius: 6px;
-      color: #dce6ee;
-      background: rgba(7, 11, 16, .78);
-      font: 600 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .04em;
-      pointer-events: none;
-      backdrop-filter: blur(8px);
-    }
-
+    .more-media { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; background: rgba(13, 20, 27, .42); }
+    .more-media summary { display: flex; justify-content: space-between; padding: 10px 13px; color: var(--muted); cursor: pointer; font: 650 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .more-media summary span { color: var(--accent); }
+    .more-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 10px 10px; }
+    .media-thumb { aspect-ratio: 3 / 2; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: transparent; cursor: zoom-in; }
+    .media-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .media-lightbox { width: min(94vw, 1200px); max-width: none; max-height: 92vh; padding: 0; overflow: visible; border: 1px solid var(--line); border-radius: 12px; background: #101922; }
+    .media-lightbox::backdrop { background: rgba(2, 5, 8, .8); }
+    .media-lightbox img { display: block; width: 100%; max-height: 84vh; object-fit: contain; }
+    .media-lightbox button { position: absolute; top: 8px; right: 8px; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; color: var(--text); background: rgba(7, 11, 16, .8); cursor: pointer; }
     .placeholder {
       position: relative;
       min-height: 220px;
@@ -852,13 +737,8 @@
     .back-top { transition: color .2s ease; }
     .back-top:hover { color: var(--accent); }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-
-    .reveal.visible { opacity: 1; transform: none; }
+    /* 内容默认可见，确保从项目锚点或外部链接进入时不会出现空白区。 */
+    .reveal { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -896,11 +776,14 @@
       section { padding: 68px 0; }
       .section-heading { display: block; margin-bottom: 32px; }
       .section-index { margin-bottom: 12px; }
-      .stack-grid, .experience-card, .bullet-grid, .project-columns, .gallery { grid-template-columns: 1fr; }
+      .stack-grid, .experience-card, .bullet-grid, .project-columns { grid-template-columns: 1fr; }
+      .project-showcase, .drone-showcase { grid-template-columns: 1fr; }
+      .photo-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .secondary-video-grid { grid-template-columns: minmax(0, 1fr) 96px; }
+      .portrait-video { width: 100%; }
       .experience-meta { border-right: 0; border-bottom: 1px solid var(--line); }
       .project-head { grid-template-columns: 1fr; gap: 18px; }
       .role-badge { width: fit-content; }
-      .diagram-grid { grid-template-columns: 1fr; }
       .project-media.wide { grid-column: auto; }
       .other-project { grid-template-columns: 1fr; padding: 26px; }
       .contact-row { grid-template-columns: 74px 1fr; gap: 12px; }
@@ -1024,76 +907,70 @@
                 <span>57600 bps · Modbus RTU</span><span>640 × 640 INT8 · RKNN</span><span>约 57 ms · 板端推理</span><span>1280 × 720@30 fps · H.264/RTSP</span><span>端到端延迟约 240 ms</span>
               </div>
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">Android</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">H.264 / RTSP</span><span class="tag">YOLOv5 / RKNN</span></div>
-              <div class="diagram-grid" aria-label="途 S1 系统架构图与控制任务图">
-                <figure class="diagram-card">
-                  <img src="assets/s1-system-overview.png" alt="途 S1 智能小车完整技术系统架构图" loading="lazy">
-                  <figcaption><strong>整机系统架构</strong>控制、视觉与图传三条链路的端到端连接关系。</figcaption>
-                </figure>
-                <figure class="diagram-card">
-                  <img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy">
-                  <figcaption><strong>FreeRTOS 控制任务</strong>遥控解析、底盘控制与状态回传的任务组织。</figcaption>
-                </figure>
-              </div>
               <div class="project-columns">
                 <section class="project-block">
-                  <h4>系统实现能力</h4>
-                  <ul class="clean-list"><li>遥控器控制与 MAVLink 通信</li><li>FreeRTOS 小车控制与手动 / 自动模式切换</li><li>H.264 编码与 RTSP 视频回传</li><li>YOLOv5 / RKNN 目标检测与视觉跟随</li><li>Android 遥控、视频显示及电压、转速、坡度等状态交互</li></ul>
-                </section>
-                <section class="project-block">
                   <h4>本人主要负责</h4>
-                  <ul class="clean-list"><li>整体功能需求拆解与方案集成</li><li>通过示波器和逻辑分析仪确认 57600 波特率、Modbus RTU 协议及设备地址 01</li><li>完成电机速度控制、状态读取及 MAVLink 遥测接入</li><li>完成 RV1106 环境与功能配置，并参与视觉检测、Android 功能的运行验证与联调</li><li>负责代码验证、配置修改、模型部署、问题排查和端到端联调</li><li>实现并验证视觉跟随和接近目标功能</li></ul>
+                  <ul class="clean-list"><li>整体功能需求拆解、方案集成与端到端联调</li><li>使用示波器和逻辑分析仪确认 57600 波特率、Modbus RTU 协议及设备地址 01</li><li>完成电机速度控制、状态读取及 MAVLink 遥测接入</li><li>完成 RV1106 环境配置，并参与视觉检测、Android 功能的运行验证与联调</li><li>负责代码验证、配置修改、模型部署与设备问题排查</li></ul>
                 </section>
                 <section class="project-block">
-                  <h4>关键实现与验证</h4>
-                  <ul class="clean-list"><li>基于 FreeRTOS 完成遥控解析、运动控制与状态回传任务框架配置、功能验证和整机联调</li><li>完成 YOLOv5 数据集训练、模型转换、RKNN 板端部署与实际检测验证</li><li>通过 RKIPC RGN/OSD 将检测框叠加到 RTSP 码流，并完成板端显示验证</li><li>参与 Android 遥控 App 功能完善，负责界面、通信、视频与车辆状态链路调试</li></ul>
-                </section>
-                <section class="project-block">
-                  <h4>工程实践重点</h4>
-                  <ul class="clean-list"><li>重新布线并更换电池，解决电机工作时压降导致图传设备重启的问题</li><li>启用 DMA 接收后解决电压、转速状态回传异常</li><li>关闭 RV1106 原有自启动服务、配置固定 IP，并验证 Wi-Fi 与网口推流</li><li>完成连接线制作、第二台普通网络摄像头小车搭建及多端整机联调</li></ul>
+                  <h4>关键实现 / 工程结果</h4>
+                  <ul class="clean-list"><li>完成 FreeRTOS 遥控解析、运动控制与状态回传任务框架配置和整机验证</li><li>完成 YOLOv5 数据集训练、模型转换与 RKNN 板端检测验证</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 码流，并完成显示验证</li><li>解决电机压降引发的图传重启与 DMA 未启用导致的状态回传异常</li><li>实现并验证视觉跟随、接近目标及手动 / 自动模式切换</li></ul>
                 </section>
               </div>
 
+              <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
+                <img src="assets/s1-end-to-end-architecture.png" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
+                <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 遥控、STM32/FreeRTOS 控制、RV1106 视觉推理和 H.264/RTSP 图传的连接关系。</figcaption>
+              </figure>
+              <details class="architecture-details">
+                <summary>查看 FreeRTOS / MAVLink 控制链路详情</summary>
+                <figure>
+                  <img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy">
+                  <figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption>
+                </figure>
+              </details>
 
-
-              <div class="gallery" aria-label="途 S1 双车平台实拍与演示">
-                <figure class="project-media photo">
-                  <img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车的顶视布线" loading="lazy">
-                  <figcaption>RV1106 视觉小车 · 顶视布线</figcaption>
-                </figure>
-                <figure class="project-media photo">
-                  <img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视模组" loading="lazy">
-                  <figcaption>RV1106 视觉小车 · 前视模组</figcaption>
-                </figure>
-                <figure class="project-media photo">
-                  <img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车的前视摄像头" loading="lazy">
-                  <figcaption>普通网络摄像头小车 · 前视摄像头</figcaption>
-                </figure>
-                <figure class="project-media photo">
-                  <img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车的顶视布线" loading="lazy">
-                  <figcaption>普通网络摄像头小车 · 顶视布线</figcaption>
-                </figure>
-                <figure class="project-media">
+              <div class="project-showcase" aria-label="途 S1 主演示与实车照片">
+                <figure class="project-media primary-video landscape-video">
                   <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频">
                     <source src="assets/s1-balloon-detection.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
-                  <figcaption>RV1106 气球检测演示 · 默认 1.25×</figcaption>
+                  <figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption>
                 </figure>
-                <figure class="project-media">
+                <div class="photo-stack" aria-label="途 S1 实车照片">
+                  <figure class="project-media project-photo focus-camera">
+                    <img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视摄像头模组" loading="lazy">
+                    <figcaption>RV1106 视觉车 · 摄像头模组</figcaption>
+                  </figure>
+                  <figure class="project-media project-photo">
+                    <img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车的前视结构" loading="lazy">
+                    <figcaption>网络摄像头车 · 前视结构</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <details class="more-media">
+                <summary>更多实物照片 <span>+2</span></summary>
+                <div class="more-photo-grid">
+                  <button class="media-thumb" type="button" data-lightbox="assets/s1-black-car-top.jpg" data-alt="RV1106 视觉小车顶视布线"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视布线" loading="lazy"></button>
+                  <button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button>
+                </div>
+              </details>
+              <div class="secondary-video-grid" aria-label="途 S1 次要演示视频">
+                <figure class="project-media landscape-video">
                   <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频">
                     <source src="assets/s1-direction-tracking.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
                   <figcaption>方向追踪演示 · 默认 1.25×</figcaption>
                 </figure>
-                <figure class="project-media wide portrait">
+                <figure class="project-media portrait-video">
                   <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频">
                     <source src="assets/s1-control-demo.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
-                  <figcaption>小车控制演示 · 默认 1.25×</figcaption>
+                  <figcaption>控制演示 · 1.25×</figcaption>
                 </figure>
-
               </div>
             </div>
           </article>
@@ -1120,27 +997,31 @@
 
               <p class="truth-note"><strong>职责边界：</strong>视觉控制与无人机自主控制算法主要由其他成员负责；我负责和参与的是硬件平台搭建、动力系统排查、光流接入、悬停调试、检测模型训练及整机联调。</p>
               <div class="project-tags tags"><span class="tag">RK3566 Zero 3W</span><span class="tag">Flight Controller</span><span class="tag">ESC Firmware</span><span class="tag">MTF-01 Optical Flow</span><span class="tag">Wireless Video</span><span class="tag">YOLO</span><span class="tag">Fusion 360</span><span class="tag">3D Printing</span><span class="tag">System Integration</span></div>
-              <div class="gallery" aria-label="无人机项目实拍与演示">
-                <figure class="project-media">
-                  <img src="assets/drone-camera-front.jpg" alt="无人机前视摄像头与固定结构" loading="lazy">
-                  <figcaption>摄像头与固定结构</figcaption>
-                </figure>
-                <figure class="project-media">
-                  <img src="assets/drone-overview.jpg" alt="无人机机体、线束与视觉模块总览" loading="lazy">
-                  <figcaption>无人机整机与线束</figcaption>
-                </figure>
-                <figure class="project-media">
-                  <img src="assets/drone-controller-detection.jpg" alt="遥控器端显示的气球检测画面" loading="lazy">
-                  <figcaption>遥控器端检测画面</figcaption>
-                </figure>
-                <figure class="project-media wide">
-                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="无人机悬停与视觉检测实机演示视频">
-                    <source src="assets/drone-demo.mp4" type="video/mp4">
+              <div class="drone-showcase" aria-label="无人机主演示与结构照片">
+                <figure class="project-media landscape-video">
+                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" poster="assets/drone-overview.jpg" aria-label="无人机悬停与视觉检测实机演示视频">
+                    <source src="assets/web/drone-demo-web.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
-                  <figcaption>实机演示 · 默认 1.25×</figcaption>
+                  <figcaption>主演示 · 悬停与视觉检测 · 默认 1.25×</figcaption>
                 </figure>
+                <div class="photo-stack" aria-label="无人机结构与检测画面">
+                  <figure class="project-media project-photo focus-camera">
+                    <img src="assets/drone-camera-front.jpg" alt="无人机前视摄像头与固定结构" loading="lazy">
+                    <figcaption>摄像头固定结构</figcaption>
+                  </figure>
+                  <figure class="project-media project-photo">
+                    <img src="assets/drone-controller-detection.jpg" alt="遥控器端显示的气球检测画面" loading="lazy">
+                    <figcaption>遥控器端检测画面</figcaption>
+                  </figure>
+                </div>
               </div>
+              <details class="more-media">
+                <summary>查看整机与线束照片 <span>+1</span></summary>
+                <div class="more-photo-grid">
+                  <button class="media-thumb" type="button" data-lightbox="assets/drone-overview.jpg" data-alt="无人机机体、线束与视觉模块总览"><img src="assets/drone-overview.jpg" alt="无人机机体、线束与视觉模块总览" loading="lazy"></button>
+                </div>
+              </details>
             </div>
           </article>
         </div>
@@ -1216,6 +1097,10 @@
     </div>
   </footer>
 
+  <dialog class="media-lightbox" id="media-lightbox" aria-label="查看项目实物照片">
+    <button type="button" aria-label="关闭图片预览">×</button>
+    <img src="" alt="">
+  </dialog>
   <script>
     // 移动端导航开关
     const menuButton = document.querySelector('.menu-button');
@@ -1280,6 +1165,19 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // 更多实物照片使用原生对话框放大预览，避免主页面展开成长素材墙。
+    const mediaLightbox = document.getElementById('media-lightbox');
+    const lightboxImage = mediaLightbox.querySelector('img');
+    const closeLightbox = () => { if (mediaLightbox.open) mediaLightbox.close(); };
+    document.querySelectorAll('[data-lightbox]').forEach(button => {
+      button.addEventListener('click', () => {
+        lightboxImage.src = button.dataset.lightbox;
+        lightboxImage.alt = button.dataset.alt || '';
+        mediaLightbox.showModal();
+      });
+    });
+    mediaLightbox.querySelector('button').addEventListener('click', closeLightbox);
+    mediaLightbox.addEventListener('click', event => { if (event.target === mediaLightbox) closeLightbox(); });
     // 项目演示默认以 1.25× 播放；用户仍可用播放器原生控件暂停、拖动和调整。
     document.querySelectorAll('.project-video').forEach(video => {
       const playbackRate = Number(video.dataset.playbackRate) || 1;

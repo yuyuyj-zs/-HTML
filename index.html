@@ -685,6 +685,10 @@
     }
 
     .project-media.wide { grid-column: 1 / -1; }
+    .project-media.portrait video {
+      height: 360px;
+      min-height: 0;
+    }
 
     .project-media img,
     .project-media video {
@@ -1098,12 +1102,26 @@
                 <div class="placeholder" data-label="Android 遥控器 App"><span>Project Image</span></div>
                 <div class="placeholder" data-label="RV1106 摄像头"><span>Project Image</span></div>
                 <div class="placeholder" data-label="YOLO 检测效果"><span>Project Image</span></div>
-                <figure class="project-media wide">
+                <figure class="project-media">
                   <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频">
                     <source src="assets/s1-balloon-detection.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
                   <figcaption>RV1106 气球检测演示 · 默认 1.25×</figcaption>
+                </figure>
+                <figure class="project-media">
+                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频">
+                    <source src="assets/s1-direction-tracking.mp4" type="video/mp4">
+                    当前浏览器不支持视频播放。
+                  </video>
+                  <figcaption>方向追踪演示 · 默认 1.25×</figcaption>
+                </figure>
+                <figure class="project-media wide portrait">
+                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频">
+                    <source src="assets/s1-control-demo.mp4" type="video/mp4">
+                    当前浏览器不支持视频播放。
+                  </video>
+                  <figcaption>小车控制演示 · 默认 1.25×</figcaption>
                 </figure>
                 <div class="placeholder wide" data-label="系统架构图"><span>Project Image</span></div>
               </div>

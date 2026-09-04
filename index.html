@@ -689,6 +689,10 @@
       height: 360px;
       min-height: 0;
     }
+    .project-media.photo img {
+      height: 340px;
+      min-height: 0;
+    }
 
     .project-media img,
     .project-media video {
@@ -1070,7 +1074,7 @@
                 <div><p class="project-number">PROJECT 01</p><h3>途 S1 智能小车控制、AI 视觉与低延迟图传系统</h3></div>
                 <span class="role-badge">主要集成与联调者之一</span>
               </header>
-              <p class="project-intro">基于途 S1 底盘二次开发，系统打通 STM32F407 底盘控制、遥控通信、RV1106 视觉感知、H.264 / RTSP 视频回传与 Android 交互，完成 Wi-Fi / 网口推流链路接入、气球检测跟随及手动 / 自动模式切换验证。</p>
+              <p class="project-intro">基于两辆途 S1 底盘开展二次开发与验证：一辆加装 RV1106 视觉节点，另一辆接入普通网络摄像头。系统打通 STM32F407 底盘控制、遥控通信、视觉感知、H.264 / RTSP 视频回传与 Android 交互，完成 Wi-Fi / 网口推流链路接入、气球检测跟随及手动 / 自动模式切换验证。</p>
 
               <div class="system-flow" aria-label="系统链路示意">
                 <div class="flow-node">遥控器</div><div class="flow-node">MAVLink<br>通信链路</div><div class="flow-node">FreeRTOS<br>小车控制</div><div class="flow-node">RV1106<br>摄像头</div><div class="flow-node">YOLOv5<br>RKNN 检测</div><div class="flow-node">H.264 / RTSP<br>视频回传</div><div class="flow-node">Android<br>App</div>
@@ -1091,17 +1095,29 @@
                 </section>
                 <section class="project-block">
                   <h4>工程实践重点</h4>
-                  <ul class="clean-list"><li>重新布线并更换电池，解决电机工作时压降导致图传设备重启的问题</li><li>启用 DMA 接收后解决电压、转速状态回传异常</li><li>关闭 RV1106 原有自启动服务、配置固定 IP，并验证 Wi-Fi 与网口推流</li><li>完成连接线制作、第二台小车搭建及多端整机联调</li></ul>
+                  <ul class="clean-list"><li>重新布线并更换电池，解决电机工作时压降导致图传设备重启的问题</li><li>启用 DMA 接收后解决电压、转速状态回传异常</li><li>关闭 RV1106 原有自启动服务、配置固定 IP，并验证 Wi-Fi 与网口推流</li><li>完成连接线制作、第二台普通网络摄像头小车搭建及多端整机联调</li></ul>
                 </section>
               </div>
 
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">Android</span><span class="tag">RV1106</span><span class="tag">RKIPC RGN/OSD</span><span class="tag">H.264 / RTSP</span><span class="tag">YOLOv5 / RKNN</span></div>
 
-              <div class="gallery" aria-label="途 S1 项目图片占位">
-                <div class="placeholder" data-label="智能小车"><span>Project Image</span></div>
-                <div class="placeholder" data-label="Android 遥控器 App"><span>Project Image</span></div>
-                <div class="placeholder" data-label="RV1106 摄像头"><span>Project Image</span></div>
-                <div class="placeholder" data-label="YOLO 检测效果"><span>Project Image</span></div>
+              <div class="gallery" aria-label="途 S1 双车平台实拍与演示">
+                <figure class="project-media photo">
+                  <img src="assets/s1-network-car-top.jpg" alt="普通网络摄像头小车的顶视布线" loading="lazy">
+                  <figcaption>网络摄像头小车 · 顶视布线</figcaption>
+                </figure>
+                <figure class="project-media photo">
+                  <img src="assets/s1-network-car-front.jpg" alt="普通网络摄像头小车的前视摄像头" loading="lazy">
+                  <figcaption>网络摄像头小车 · 前视摄像头</figcaption>
+                </figure>
+                <figure class="project-media photo">
+                  <img src="assets/s1-rv1106-car-front.jpg" alt="加装 RV1106 视觉节点小车的前视模组" loading="lazy">
+                  <figcaption>RV1106 视觉小车 · 前视模组</figcaption>
+                </figure>
+                <figure class="project-media photo">
+                  <img src="assets/s1-rv1106-car-top.jpg" alt="加装 RV1106 视觉节点小车的顶视布线" loading="lazy">
+                  <figcaption>RV1106 视觉小车 · 顶视布线</figcaption>
+                </figure>
                 <figure class="project-media">
                   <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频">
                     <source src="assets/s1-balloon-detection.mp4" type="video/mp4">

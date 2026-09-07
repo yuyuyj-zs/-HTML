@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="许宇杰的嵌入式系统、机器人与智能硬件工程实践 Portfolio。">
   <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="assets/s1-black-car-front.jpg" type="image/jpeg">
+  <meta property="og:title" content="许宇杰｜嵌入式软件开发 / 机器人 / 智能硬件">
+  <meta property="og:description" content="2027 届电子信息工程本科，STM32 / FreeRTOS / RV1106 / 机器人与边缘视觉工程实践。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yuyuyj-zs.github.io/-HTML/assets/s1-black-car-front.jpg">
   <title>许宇杰｜嵌入式软件开发 / 机器人 / 智能硬件</title>
   <style>
     :root {
@@ -190,9 +195,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
-      gap: 72px;
-      align-items: center;
+      grid-template-columns: 1fr;
     }
 
     .eyebrow {
@@ -214,10 +217,10 @@
     }
 
     .hero h1 {
-      max-width: 800px;
+      max-width: none;
       margin: 0;
-      font-size: clamp(46px, 6.1vw, 82px);
-      line-height: 1.04;
+      font-size: clamp(46px, 5.2vw, 76px);
+      line-height: 1.08;
       letter-spacing: -.045em;
     }
 
@@ -293,57 +296,6 @@
 
     .button[aria-disabled="true"]:hover { transform: none; }
 
-    .hero-terminal {
-      position: relative;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(18, 26, 35, .82);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-terminal::before {
-      content: "SYSTEM PROFILE";
-      position: absolute;
-      top: -10px;
-      left: 18px;
-      padding: 2px 8px;
-      color: var(--muted);
-      background: var(--bg);
-      font: 600 10px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
-      letter-spacing: .12em;
-    }
-
-    .terminal-top {
-      display: flex;
-      gap: 6px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .terminal-top i {
-      display: block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #465363;
-    }
-
-    .terminal-top i:first-child { background: var(--accent); }
-    .terminal-lines { margin-top: 18px; }
-
-    .terminal-line {
-      display: grid;
-      grid-template-columns: 94px 1fr;
-      gap: 10px;
-      margin-top: 13px;
-      font: 500 12px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace;
-    }
-
-    .terminal-line dt { color: #718191; }
-    .terminal-line dd { margin: 0; color: #d6e0e9; }
-    .terminal-line .online { color: var(--accent); }
-
     section { padding: 86px 0; }
     section + section { border-top: 1px solid rgba(37, 50, 65, .7); }
 
@@ -374,11 +326,7 @@
       color: var(--muted);
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 24px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr; }
 
     .about-copy,
     .focus-card,
@@ -401,37 +349,11 @@
     }
 
     .about-copy strong { color: var(--text); font-weight: 650; }
-
-    .focus-list {
-      display: grid;
-      gap: 12px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .focus-card {
-      position: relative;
-      padding: 18px 20px 18px 52px;
-      color: #d9e2e9;
-      font-size: 14px;
-      transition: border-color .2s ease, transform .2s ease;
-    }
-
-    .focus-card::before {
-      content: attr(data-index);
-      position: absolute;
-      left: 18px;
-      top: 18px;
-      color: var(--accent);
-      font: 700 11px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace;
-    }
-
-    .focus-card:hover { transform: translateX(4px); border-color: var(--line-bright); }
+    .ai-note { margin-top:18px !important; color:var(--muted) !important; font-size:14px !important; line-height:1.7 !important; }
 
     .stack-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -442,7 +364,7 @@
 
     .stack-card:hover { transform: translateY(-4px); border-color: var(--line-bright); }
 
-    .stack-card.tools-wide { grid-column: 1 / -1; }
+    .stack-card.tools-wide { grid-column: auto; }
 
     .stack-card h3 {
       display: flex;
@@ -567,7 +489,10 @@
 
     .project-content { padding: clamp(26px, 3vw, 30px) clamp(22px, 3vw, 30px) 30px; }
     .project-intro { margin: 16px 0; }
-    .project-facts { margin: 12px 0; }
+    .project-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin:14px 0; }
+    .project-fact { min-width:0; padding:11px 12px; border-left:2px solid var(--line-bright); background:rgba(13,20,27,.26); }
+    .project-fact small,.project-fact span { display:block; color:var(--muted); font:600 11px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .project-fact strong { display:block; margin:4px 0 2px; color:var(--text); font-size:14px; line-height:1.35; }
     .project-tags { margin-top: 12px; }
 
     .project-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
@@ -701,22 +626,9 @@
 
     .contact-copy p { margin: 14px 0 0; color: var(--muted); }
 
-    .contact-list {
-      display: grid;
-      margin: 0;
-    }
-
-    .contact-row {
-      min-height: 82px;
-      display: grid;
-      grid-template-columns: 100px minmax(0, 1fr);
-      align-items: center;
-      gap: 20px;
-      padding: 18px clamp(24px, 4vw, 42px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .contact-row:last-child { border-bottom: 0; }
+    .contact-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0; }
+    .contact-row { min-height:106px; display:grid; align-content:center; gap:6px; padding:18px 20px; border-right:1px solid var(--line); }
+    .contact-row:last-child { border-right:0; }
     .contact-row dt { color: var(--muted); font-size: 13px; }
     .contact-row dd { margin: 0; color: #d6e0e9; font-weight: 650; overflow-wrap: anywhere; }
 
@@ -751,16 +663,20 @@
       .reveal { opacity: 1; transform: none; }
     }
 
+    @media (min-width:1024px) { .hero h1 { white-space:nowrap; } }
+    @media (max-width:1040px) { .stack-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.stack-card.tools-wide{grid-column:1 / -1;} }
+
     @media (max-width: 960px) {
       .hero { min-height: auto; }
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero-terminal { max-width: 620px; }
       .section-heading { grid-template-columns: 130px 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .system-flow { grid-template-columns: repeat(4, minmax(100px, 1fr)); }
       .flow-node:not(:last-child)::after { display: none; }
       .contact-panel { grid-template-columns: 1fr; }
-      .contact-copy { border-right: 0; border-bottom: 1px solid var(--line); }
+      .contact-copy { border-right:0; border-bottom:1px solid var(--line); }
+      .contact-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .contact-row:nth-child(2){border-right:0;}
+      .contact-row:nth-child(-n+2){border-bottom:1px solid var(--line);}
     }
 
     @media (max-width: 760px) {
@@ -779,6 +695,7 @@
       .section-index { margin-bottom: 12px; }
       .stack-grid, .experience-card, .bullet-grid, .project-columns { grid-template-columns: 1fr; }
       .project-showcase, .drone-showcase { grid-template-columns: 1fr; }
+      .project-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .photo-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .secondary-video-grid { grid-template-columns: 1fr; gap: 8px; }
       .secondary-video-grid .landscape-video { width: 100%; }
@@ -788,14 +705,15 @@
       .role-badge { width: fit-content; }
       .project-media.wide { grid-column: auto; }
       .other-project { grid-template-columns: 1fr; padding: 26px; }
-      .contact-row { grid-template-columns: 74px 1fr; gap: 12px; }
+      .contact-row { grid-template-columns:1fr; gap:5px; }
       .footer-wrap { align-items: flex-start; flex-direction: column; }
     }
 
     @media (max-width: 420px) {
       .hero-actions { display: grid; }
       .hero-actions .button { width: 100%; }
-      .terminal-line { grid-template-columns: 80px 1fr; font-size: 11px; }
+
+      .project-facts { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .project-content { padding: 24px 20px 28px; }
       .project-bar { padding: 12px 18px; }
       .project-bar span:first-child { display: none; }
@@ -829,27 +747,16 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Open to 2026 Autumn Recruitment</p>
+          <p class="eyebrow">2026 秋招 · 2027 届</p>
           <h1 id="hero-title"><span>许宇杰 · 2027 届电子信息工程本科</span>让设备感知、通信并执行</h1>
           <p class="hero-role">嵌入式软件开发 / 机器人 / 智能硬件</p>
-          <p class="hero-description">具备 STM32、FreeRTOS、RV1106 与机器人平台实践经验，重点负责硬件接入、环境配置、设备部署、问题定位及端到端软硬件联调。</p>
+          <p class="hero-description">具备 STM32、FreeRTOS、RV1106 与机器人平台实践经验，重点负责硬件接入、嵌入式系统部署、通信调试、问题定位与整机联调。</p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">查看核心项目 <span aria-hidden="true">↓</span></a>
             <a class="button" href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" download>下载简历 PDF</a>
           </div>
         </div>
 
-        <aside class="hero-terminal" aria-label="工程方向概览">
-          <div class="terminal-top" aria-hidden="true"><i></i><i></i><i></i></div>
-          <dl class="terminal-lines">
-            <div class="terminal-line"><dt>focus</dt><dd>embedded_robotics</dd></div>
-            <div class="terminal-line"><dt>platform</dt><dd>STM32 / RV1106 / RK3566</dd></div>
-            <div class="terminal-line"><dt>method</dt><dd>engineering_validation</dd></div>
-            <div class="terminal-line"><dt>practice</dt><dd>deploy_debug_integrate</dd></div>
-            <div class="terminal-line"><dt>education</dt><dd>Electronic Information Eng.</dd></div>
-            <div class="terminal-line"><dt>status</dt><dd class="online">● AVAILABLE</dd></div>
-          </dl>
-        </aside>
       </div>
     </section>
 
@@ -858,12 +765,12 @@
       <div class="container">
         <header class="section-heading reveal">
           <p class="section-index">02 / STACK</p>
-          <div><h2 id="skills-title">技术与工程实践</h2><p>以下能力主要来自项目实践、配置、部署与调试，不代表所有模块均为独立手写实现。</p></div>
+          <div><h2 id="skills-title">技术与工程实践</h2></div>
         </header>
         <div class="stack-grid">
-          <article class="stack-card reveal"><h3>核心工程实践</h3><div class="tags"><span class="tag">STM32F1 / F4</span><span class="tag">HAL / CubeMX</span><span class="tag">UART</span><span class="tag">DMA</span><span class="tag">ADC</span><span class="tag">PWM</span><span class="tag">SPI</span><span class="tag">I2C</span><span class="tag">硬件调试</span><span class="tag">系统联调</span><span class="tag">RV1106 / RK3566</span><span class="tag">RTSP / H.264</span><span class="tag">图传链路</span></div></article>
-          <article class="stack-card reveal"><h3>平台与部署实践</h3><div class="tags"><span class="tag">Embedded Linux 环境配置</span><span class="tag">FreeRTOS 应用</span><span class="tag">Android</span><span class="tag">YOLOv5</span><span class="tag">RKNN</span><span class="tag">OpenCV</span><span class="tag">V4L2 采集流程</span><span class="tag">Shell / 进程 / 网络基础</span><span class="tag">交叉编译 / Makefile</span><span class="tag">模型转换 / 板端部署</span></div></article>
-          <article class="stack-card tools-wide reveal"><h3>工具 / 协议</h3><div class="tags"><span class="tag">示波器</span><span class="tag">逻辑分析仪</span><span class="tag">Keil</span><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">嘉立创 EDA</span><span class="tag">Fusion 360</span><span class="tag">3D 打印</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">SBUS</span><span class="tag">MQTT</span><span class="tag">RTSP / RTP</span><span class="tag">UDP / TCP</span></div></article>
+          <article class="stack-card reveal"><h3>MCU / RTOS</h3><div class="tags"><span class="tag">C</span><span class="tag">STM32F1 / F4</span><span class="tag">FreeRTOS</span><span class="tag">HAL / CubeMX</span><span class="tag">UART</span><span class="tag">DMA</span><span class="tag">TIM / PWM</span><span class="tag">ADC</span><span class="tag">SPI</span><span class="tag">I²C</span></div></article>
+          <article class="stack-card reveal"><h3>嵌入式 Linux / 边缘视觉</h3><div class="tags"><span class="tag">RV1106</span><span class="tag">Embedded Linux</span><span class="tag">RKNN</span><span class="tag">RGA</span><span class="tag">V4L2</span><span class="tag">YOLOv5</span><span class="tag">交叉编译</span><span class="tag">Makefile</span><span class="tag">Shell</span></div></article>
+          <article class="stack-card tools-wide reveal"><h3>通信 / 调试</h3><div class="tags"><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">SBUS</span><span class="tag">RTSP / RTP</span><span class="tag">UDP</span><span class="tag">示波器</span><span class="tag">逻辑分析仪</span><span class="tag">软硬件联调</span></div></article>
         </div>
       </div>
     </section>
@@ -894,7 +801,7 @@
       <div class="container">
         <header class="section-heading reveal">
           <p class="section-index">04 / PROJECTS</p>
-          <div><h2 id="projects-title">核心项目</h2><p>以端到端链路组织内容，方便在面试中按“系统怎么工作、我做了什么、如何联调”逐层讲解。</p></div>
+          <div><h2 id="projects-title">核心项目</h2></div>
         </header>
 
         <div class="projects-list">
@@ -903,13 +810,13 @@
             <div class="project-content">
               <header class="project-head">
                 <div><p class="project-number">PROJECT 01</p><h3>途 S1 智能小车控制、AI 视觉与低延迟图传系统</h3></div>
-                <span class="role-badge">主要集成与联调者之一</span>
+                <span class="role-badge">个人主导 · 系统集成与联调</span>
               </header>
-              <p class="project-intro">基于途 S1 底盘二次开发，完成遥控控制、AI 视觉检测、自主跟随与低延迟视频回传的一体化智能移动平台。项目使用两辆实车验证：黑色车加装 RV1106 视觉节点，绿色车接入普通网络摄像头。</p>
+              <p class="project-intro">基于途 S1 黑色小车完成 RV1106 视觉改装与控制系统集成，实现遥控控制、AI 气球检测、自主跟随及低延迟视频回传；绿色小车用于普通网络摄像头接入与图传链路对照验证。</p>
               <div class="project-facts" aria-label="智能小车关键参数">
-                <span>57600 bps · Modbus RTU</span><span>640 × 640 INT8 · RKNN</span><span>约 57 ms · 板端推理</span><span>1280 × 720@30 fps · H.264/RTSP</span><span>端到端延迟约 240 ms</span>
+                <div class="project-fact"><small>通信</small><strong>57600 bps</strong><span>Modbus RTU</span></div><div class="project-fact"><small>AI 推理</small><strong>640 × 640 INT8</strong><span>RKNN · ≈57 ms</span></div><div class="project-fact"><small>实时图传</small><strong>1280 × 720 @ 30 fps</strong><span>H.264 / RTSP</span></div><div class="project-fact"><small>显示延迟</small><strong>≈240 ms</strong><span>端到端实测</span></div>
               </div>
-              <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">Android</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">H.264 / RTSP</span><span class="tag">YOLOv5 / RKNN</span></div>
+              <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">YOLOv5 → RKNN</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">H.264 / RTSP</span></div>
               <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
                 <img src="assets/s1-end-to-end-architecture.png" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
                 <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 遥控、STM32/FreeRTOS 控制、RV1106 视觉推理和 H.264/RTSP 图传的连接关系。</figcaption>
@@ -919,13 +826,13 @@
                 <figure class="project-media primary-video landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频"><source src="assets/s1-balloon-detection.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption></figure>
                 <div class="photo-stack" aria-label="途 S1 实车照片">
                   <figure class="project-media project-photo focus-camera"><img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视摄像头模组" loading="lazy"><figcaption>RV1106 视觉车 · 摄像头模组</figcaption></figure>
-                  <figure class="project-media project-photo"><img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车的前视结构" loading="lazy"><figcaption>网络摄像头车 · 前视结构</figcaption></figure>
+                  <figure class="project-media project-photo"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视与结构布线" loading="lazy"><figcaption>RV1106 视觉车 · 顶视与结构</figcaption></figure>
                 </div>
               </div>
 
               <div class="project-columns">
-                <section class="project-block"><h4>本人主要负责</h4><ul class="clean-list"><li>整体功能需求拆解、方案集成与端到端联调</li><li>使用示波器和逻辑分析仪确认 57600 波特率、Modbus RTU 协议及设备地址 01</li><li>完成电机速度控制、状态读取及 MAVLink 遥测接入</li><li>完成 RV1106 环境配置，并参与视觉检测、Android 功能的运行验证与联调</li><li>负责代码验证、配置修改、模型部署与设备问题排查</li></ul></section>
-                <section class="project-block"><h4>关键实现 / 工程结果</h4><ul class="clean-list"><li>完成 FreeRTOS 遥控解析、运动控制与状态回传任务框架配置和整机验证</li><li>完成 YOLOv5 数据集训练、模型转换与 RKNN 板端检测验证</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 码流，并完成显示验证</li><li>解决电机压降引发的图传重启与 DMA 未启用导致的状态回传异常</li><li>实现并验证视觉跟随、接近目标及手动 / 自动模式切换</li></ul></section>
+                <section class="project-block"><h4>本人主要负责</h4><ul class="clean-list"><li>整体需求拆解、控制 / 视觉 / 图传方案集成与端到端联调</li><li>使用示波器、逻辑分析仪确认 57600 bps、Modbus RTU 及设备地址</li><li>完成 STM32F407 + FreeRTOS 底盘控制、状态读取与 MAVLink 遥测接入</li><li>完成 RV1106 环境配置、模型部署、视频及 Android 端整机联调</li></ul></section>
+                <section class="project-block"><h4>关键实现 / 工程结果</h4><ul class="clean-list"><li>完成 YOLOv5 → RKNN 640×640 INT8 模型部署，单帧推理约 57 ms</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 视频</li><li>实现视觉跟随、目标接近及手动 / 自动模式切换</li><li>实现 720p30 H.264/RTSP 图传，实测显示端到端延迟约 240 ms</li><li>定位并解决电机压降导致图传重启、DMA 未启用导致状态回传异常</li></ul></section>
               </div>
 
               <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption></figure></details>
@@ -933,7 +840,7 @@
                 <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/s1-direction-tracking.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
                 <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/s1-control-demo.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
               </div>
-              <details class="more-media"><summary>更多实物照片 <span>+2</span></summary><div class="more-photo-grid"><button class="media-thumb" type="button" data-lightbox="assets/s1-black-car-top.jpg" data-alt="RV1106 视觉小车顶视布线"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视布线" loading="lazy"></button><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button></div></details>
+              <details class="more-media"><summary>补充：网络摄像头链路验证 <span>+2</span></summary><div class="more-photo-grid"><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-front.jpg" data-alt="普通网络摄像头小车前视结构"><img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车前视结构" loading="lazy"></button><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button></div></details>
             </div>
           </article>
 
@@ -946,18 +853,9 @@
               </header>
               <p class="project-intro">基于公司无线图传产品搭建无人机验证平台，以 RK3566 Zero 3W 作为机载视觉处理端；完成飞行硬件、光流、摄像头固定结构和视觉处理端的接入，并开展悬停、图传、气球检测与整机功能验证。</p>
 
-              <div class="project-columns">
-                <section class="project-block">
-                  <h4>本人实际负责</h4>
-                  <ul class="clean-list"><li>完成环境配置、电调固件烧录和参数调整</li><li>通过更换异常电机与电调、重新调参完成动力系统验证</li><li>接入飞控，完成对频、桨叶安装、试飞与悬停调试</li><li>调整 5V 供电电阻、接线和结构，接入微空 MTF-01 光流</li><li>使用 Fusion 360 修改摄像头固定件、增高架和板卡外壳，并完成 3D 打印装配</li><li>完成 YOLO 气球检测模型训练，并配合团队开展视觉识别和整机联调</li></ul>
-                </section>
-                <section class="project-block">
-                  <h4>系统最终功能</h4>
-                  <ul class="clean-list"><li>稳定悬停与飞行验证</li><li>视觉目标检测</li><li>转圈搜索并接近目标</li><li>气球击破功能验证</li><li>手动 / 自动模式切换</li></ul>
-                </section>
-              </div>
-
-              <p class="truth-note"><strong>职责边界：</strong>视觉控制与无人机自主控制算法主要由其他成员负责；我负责和参与的是硬件平台搭建、动力系统排查、光流接入、悬停调试、检测模型训练及整机联调。</p>
+              <div class="project-columns"><section class="project-block"><h4>本人实际负责</h4><ul class="clean-list"><li>完成环境配置、电调固件烧录和参数调整</li><li>通过更换异常电机与电调、重新调参完成动力系统验证</li><li>接入飞控，完成对频、桨叶安装、试飞与悬停调试</li><li>调整 5V 供电电阻、接线和结构，接入微空 MTF-01 光流</li><li>使用 Fusion 360 修改摄像头固定件、增高架和板卡外壳，并完成 3D 打印装配</li><li>完成 YOLO 气球检测模型训练，并配合团队开展视觉识别和整机联调</li></ul></section></div>
+              <p class="truth-note"><strong>职责边界：</strong>视觉控制及无人机自主控制算法主要由团队其他成员负责；本人负责硬件平台搭建、动力系统调试、光流接入、悬停验证、气球检测模型训练及整机联调。</p>
+              <div class="project-columns"><section class="project-block"><h4>团队最终实现</h4><ul class="clean-list"><li>稳定悬停与飞行验证</li><li>视觉目标检测</li><li>转圈搜索与靠近目标</li><li>气球击破功能验证</li><li>手动 / 自动模式切换</li></ul></section></div>
               <div class="project-tags tags"><span class="tag">RK3566 Zero 3W</span><span class="tag">Flight Controller</span><span class="tag">ESC Firmware</span><span class="tag">MTF-01 Optical Flow</span><span class="tag">Wireless Video</span><span class="tag">YOLO</span><span class="tag">Fusion 360</span><span class="tag">3D Printing</span><span class="tag">System Integration</span></div>
               <div class="drone-showcase" aria-label="无人机主演示与结构照片">
                 <figure class="project-media landscape-video">
@@ -994,7 +892,7 @@
       <div class="container">
         <header class="section-heading reveal">
           <p class="section-index">05 / MORE</p>
-          <div><h2 id="other-title">其他工程实践</h2><p>补充展示已完成的物联网接入、设备联动与远程控制实践。</p></div>
+          <div><h2 id="other-title">其他工程实践</h2></div>
         </header>
         <div class="projects-list">
         <article class="project other-project other-project-solo reveal">
@@ -1017,19 +915,7 @@
           <p class="section-index">06 / ABOUT</p>
           <div><h2 id="about-title">关于我</h2><p>关注真实设备上的系统实现：让控制、通信、视觉与应用层形成可以运行和调试的完整链路。</p></div>
         </header>
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <p>我的实践集中在<strong>嵌入式系统、机器人平台与软硬件联调</strong>。项目开发中会使用 AI 编程工具辅助代码生成、修改和迭代，个人重点负责需求拆解、接口理解、硬件接入、环境与参数配置、代码验证、设备部署、问题定位和整机联调。我更关注控制、图传、视觉与应用功能如何在真实设备上形成可运行、可验证的完整闭环。</p>
-            <div class="project-tags tags" aria-label="教育与竞赛经历"><span class="tag">龙岩学院 · 电子信息工程 · 2023.09 — 2027.06</span><span class="tag">2025 中国机器人及人工智能大赛全国总决赛二等奖</span><span class="tag">2025 全国大学生电子设计竞赛福建赛区三等奖</span><span class="tag">2025 “西门子杯”华东一赛区三等奖</span></div>
-          </div>
-          <ol class="focus-list reveal" aria-label="实践重点">
-            <li class="focus-card" data-index="01">MCU 控制、硬件接入与设备调试</li>
-            <li class="focus-card" data-index="02">机器人平台搭建与执行机构验证</li>
-            <li class="focus-card" data-index="03">功能验证、部署与迭代</li>
-            <li class="focus-card" data-index="04">RV1106、图传链路与模型板端部署</li>
-            <li class="focus-card" data-index="05">控制、视觉、应用的端到端系统集成</li>
-          </ol>
-        </div>
+        <div class="about-grid"><div class="about-copy reveal"><p>电子信息工程 2027 届本科生，实践方向集中在嵌入式控制、机器人平台、边缘视觉与软硬件联调。更关注功能如何真正运行在设备上，包括硬件接入、通信链路、板端部署、问题定位和整机验证。</p><div class="project-tags tags" aria-label="教育与竞赛经历"><span class="tag">龙岩学院 · 电子信息工程 · 2023.09 — 2027.06</span><span class="tag">2025 中国机器人及人工智能大赛全国总决赛二等奖</span><span class="tag">2025 全国大学生电子设计竞赛福建赛区三等奖</span><span class="tag">2025 “西门子杯”华东一赛区三等奖</span></div><p class="ai-note">开发中会使用 AI 工具辅助代码生成与迭代，个人负责接口理解、实际验证、部署与整机联调。</p></div></div>
       </div>
     </section>
 
@@ -1040,14 +926,8 @@
           <div><h2 id="contact-title">联系方式</h2><p>欢迎就嵌入式系统、机器人集成、边缘 AI 部署与软硬件联调方向的岗位进行交流。</p></div>
         </header>
         <div class="contact-panel reveal">
-          <div class="contact-copy"><h3>期待把工程实践带到下一个真实系统中。</h3><p>欢迎通过邮件、电话或 GitHub 仓库联系我。</p></div>
-          <dl class="contact-list">
-            <div class="contact-row"><dt>Email</dt><dd><a href="mailto:yuyujie04@qq.com">yuyujie04@qq.com</a></dd></div>
-            <div class="contact-row"><dt>GitHub</dt><dd><a href="https://github.com/yuyuyj-zs/-HTML" target="_blank" rel="noreferrer">yuyuyj-zs / -HTML</a></dd></div>
-            <div class="contact-row"><dt>电话</dt><dd><a href="tel:13859844355">138-5984-4355</a></dd></div>
-            <div class="contact-row"><dt>微信</dt><dd>xyj13859844355</dd></div>
-            <div class="contact-row"><dt>PDF 简历</dt><dd><a href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" download>下载简历</a></dd></div>
-          </dl>
+          <div class="contact-copy"><h3>期待把工程实践带到下一个真实系统中。</h3><p>欢迎通过邮件、电话或微信联系。</p></div>
+          <dl class="contact-list"><div class="contact-row"><dt>Email</dt><dd><a href="mailto:yuyujie04@qq.com">yuyujie04@qq.com</a></dd></div><div class="contact-row"><dt>电话</dt><dd><a href="tel:13859844355">138-5984-4355</a></dd></div><div class="contact-row"><dt>微信</dt><dd>xyj13859844355</dd></div><div class="contact-row"><dt>PDF 简历</dt><dd><a href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" download>下载简历 PDF</a></dd></div></dl>
         </div>
       </div>
     </section>
@@ -1055,7 +935,7 @@
 
   <footer>
     <div class="container footer-wrap">
-      <span>Designed for engineering conversations · <span id="year"></span></span>
+      <span>© 2026 许宇杰</span>
       <a class="back-top" href="#top">返回顶部 ↑</a>
     </div>
   </footer>

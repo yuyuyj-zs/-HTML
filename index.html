@@ -6,6 +6,7 @@
   <meta name="description" content="许宇杰的嵌入式系统、机器人与智能硬件工程实践 Portfolio。">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="assets/s1-black-car-front.jpg" type="image/jpeg">
+  <link rel="prefetch" href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" as="document">
   <meta property="og:title" content="许宇杰｜嵌入式软件开发 / 机器人 / 智能硬件">
   <meta property="og:description" content="2027 届电子信息工程本科，STM32 / FreeRTOS / RV1106 / 机器人与边缘视觉工程实践。">
   <meta property="og:type" content="website">
@@ -647,7 +648,8 @@
       gap: 18px;
     }
 
-    .back-top { transition: color .2s ease; }
+    .back-top { appearance:none; border:0; padding:0; background:none; color:inherit; font:inherit; cursor:pointer; transition:color .2s ease; }
+    .back-top:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
     .back-top:hover { color: var(--accent); }
 
     /* 内容默认可见，确保从项目锚点或外部链接进入时不会出现空白区。 */
@@ -753,7 +755,7 @@
           <p class="hero-description">具备 STM32、FreeRTOS、RV1106 与机器人平台实践经验，重点负责硬件接入、嵌入式系统部署、通信调试、问题定位与整机联调。</p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">查看核心项目 <span aria-hidden="true">↓</span></a>
-            <a class="button" href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" download>下载简历 PDF</a>
+            <a class="button" href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" target="_blank" rel="noopener">查看 / 下载简历 PDF</a>
           </div>
         </div>
 
@@ -823,7 +825,7 @@
               </figure>
 
               <div class="project-showcase" aria-label="途 S1 主演示与实车照片">
-                <figure class="project-media primary-video landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频"><source src="assets/s1-balloon-detection.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption></figure>
+                <figure class="project-media primary-video landscape-video"><video class="project-video priority-video" controls playsinline preload="metadata" poster="assets/web/s1-balloon-detection-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车 RV1106 气球检测实机演示视频"><source src="assets/web/s1-balloon-detection-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>主演示 · RV1106 气球检测 · 默认 1.25×</figcaption></figure>
                 <div class="photo-stack" aria-label="途 S1 实车照片">
                   <figure class="project-media project-photo focus-camera"><img src="assets/s1-black-car-front.jpg" alt="RV1106 视觉小车的前视摄像头模组" loading="lazy"><figcaption>RV1106 视觉车 · 摄像头模组</figcaption></figure>
                   <figure class="project-media project-photo"><img src="assets/s1-black-car-top.jpg" alt="RV1106 视觉小车顶视与结构布线" loading="lazy"><figcaption>RV1106 视觉车 · 顶视与结构</figcaption></figure>
@@ -837,8 +839,8 @@
 
               <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption></figure></details>
               <div class="secondary-video-grid" aria-label="途 S1 次要演示视频">
-                <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/s1-direction-tracking.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
-                <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/s1-control-demo.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
+                <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-direction-tracking-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/web/s1-direction-tracking-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
+                <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-control-demo-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/web/s1-control-demo-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
               </div>
               <details class="more-media"><summary>补充：网络摄像头链路验证 <span>+2</span></summary><div class="more-photo-grid"><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-front.jpg" data-alt="普通网络摄像头小车前视结构"><img src="assets/s1-green-car-front.jpg" alt="普通网络摄像头小车前视结构" loading="lazy"></button><button class="media-thumb" type="button" data-lightbox="assets/s1-green-car-top.jpg" data-alt="普通网络摄像头小车顶视布线"><img src="assets/s1-green-car-top.jpg" alt="普通网络摄像头小车顶视布线" loading="lazy"></button></div></details>
             </div>
@@ -859,7 +861,7 @@
               <div class="project-tags tags"><span class="tag">RK3566 Zero 3W</span><span class="tag">Flight Controller</span><span class="tag">ESC Firmware</span><span class="tag">MTF-01 Optical Flow</span><span class="tag">Wireless Video</span><span class="tag">YOLO</span><span class="tag">Fusion 360</span><span class="tag">3D Printing</span><span class="tag">System Integration</span></div>
               <div class="drone-showcase" aria-label="无人机主演示与结构照片">
                 <figure class="project-media landscape-video">
-                  <video class="project-video" controls playsinline preload="metadata" data-playback-rate="1.25" poster="assets/drone-overview.jpg" aria-label="无人机悬停与视觉检测实机演示视频">
+                  <video class="project-video priority-video" controls playsinline preload="metadata" data-playback-rate="1.25" poster="assets/drone-overview.jpg" aria-label="无人机悬停与视觉检测实机演示视频">
                     <source src="assets/web/drone-demo-web.mp4" type="video/mp4">
                     当前浏览器不支持视频播放。
                   </video>
@@ -927,7 +929,7 @@
         </header>
         <div class="contact-panel reveal">
           <div class="contact-copy"><h3>期待把工程实践带到下一个真实系统中。</h3><p>欢迎通过邮件、电话或微信联系。</p></div>
-          <dl class="contact-list"><div class="contact-row"><dt>Email</dt><dd><a href="mailto:yuyujie04@qq.com">yuyujie04@qq.com</a></dd></div><div class="contact-row"><dt>电话</dt><dd><a href="tel:13859844355">138-5984-4355</a></dd></div><div class="contact-row"><dt>微信</dt><dd>xyj13859844355</dd></div><div class="contact-row"><dt>PDF 简历</dt><dd><a href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" download>下载简历 PDF</a></dd></div></dl>
+          <dl class="contact-list"><div class="contact-row"><dt>Email</dt><dd><a href="mailto:yuyujie04@qq.com">yuyujie04@qq.com</a></dd></div><div class="contact-row"><dt>电话</dt><dd><a href="tel:13859844355">138-5984-4355</a></dd></div><div class="contact-row"><dt>微信</dt><dd>xyj13859844355</dd></div><div class="contact-row"><dt>PDF 简历</dt><dd><a href="assets/resume/许宇杰_嵌入式软件开发_2027届.pdf" target="_blank" rel="noopener">查看 / 下载简历 PDF</a></dd></div></dl>
         </div>
       </div>
     </section>
@@ -936,7 +938,7 @@
   <footer>
     <div class="container footer-wrap">
       <span>© 2026 许宇杰</span>
-      <a class="back-top" href="#top">返回顶部 ↑</a>
+      <button class="back-top" type="button" aria-label="返回页面顶部">返回顶部 ↑</button>
     </div>
   </footer>
 
@@ -1006,7 +1008,30 @@
       revealItems.forEach(item => item.classList.add('visible'));
     }
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearElement = document.getElementById('year');
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+    const backTopButton = document.querySelector('.back-top');
+    backTopButton?.addEventListener('click', () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    });
+
+    const priorityVideos = document.querySelectorAll('.priority-video');
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const video = entry.target;
+          if (video.preload !== 'auto') { video.preload = 'auto'; video.load(); }
+          observer.unobserve(video);
+        });
+      }, { rootMargin: '800px 0px' });
+      priorityVideos.forEach(video => videoObserver.observe(video));
+    }
 
     // 更多实物照片使用原生对话框放大预览，避免主页面展开成长素材墙。
     const mediaLightbox = document.getElementById('media-lightbox');

@@ -329,13 +329,11 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
       gap: 14px;
-      align-items: stretch;
+      align-items: start;
     }
 
-    .about-personal,
-    .about-facts,
     .focus-card,
     .stack-card,
     .experience-card,
@@ -346,8 +344,7 @@
       background: rgba(18, 26, 35, .78);
     }
 
-    .about-personal,
-    .about-facts { padding: clamp(24px, 3vw, 28px); }
+    .about-personal { padding: 4px 0; }
 
     .about-personal > p:last-child {
       margin: 0;
@@ -357,8 +354,9 @@
     }
 
     .about-label { margin: 0 0 14px; color: var(--accent); font: 700 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .11em; }
-    .about-facts { display: grid; align-content: start; gap: 16px; }
-    .about-fact-section + .about-fact-section { padding-top: 16px; border-top: 1px solid var(--line); }
+    .about-facts { display: grid; align-content: start; gap: 12px; }
+    .education-card,
+    .awards-card { padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(18, 26, 35, .78); }
     .about-fact-section h3 { margin: 0; font-size: 18px; }
     .about-major, .about-period { margin: 6px 0 0; color: #bdc9d3; font-size: 14px; }
     .about-period { color: var(--muted); font: 600 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
@@ -518,7 +516,7 @@
     .clean-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 
     .architecture-image { margin: 16px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #f4f7f9; }
-    .architecture-image img { display: block; width: 100%; height: auto; max-height: 520px; aspect-ratio: 3600 / 1760; object-fit: contain; background: #f4f7f9; }
+    .architecture-image img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; background: #f4f7f9; }
     .architecture-image figcaption { padding: 10px 14px; color: var(--muted); font: 600 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
     .architecture-image figcaption strong { color: var(--text); }
     .architecture-details { margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; background: rgba(13, 20, 27, .48); }
@@ -820,8 +818,8 @@
               </div>
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">YOLOv5 → RKNN</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">H.264 / RTSP</span></div>
               <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
-                <img src="assets/s1-end-to-end-architecture.png" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
-                <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 遥控、STM32/FreeRTOS 控制、RV1106 视觉推理和 H.264/RTSP 图传的连接关系。</figcaption>
+                <img src="assets/s1-end-to-end-architecture.png?v=20260910" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
+                <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 展示遥控控制、STM32F407 / FreeRTOS、RV1106 视觉推理、目标结果回传及 H.264 / RTSP 视频链路。</figcaption>
               </figure>
 
               <div class="project-showcase" aria-label="途 S1 主演示与实车照片">
@@ -837,7 +835,7 @@
                 <section class="project-block"><h4>关键实现 / 工程结果</h4><ul class="clean-list"><li>完成 YOLOv5 → RKNN 640×640 INT8 模型部署，单帧推理约 57 ms</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 视频</li><li>实现视觉跟随、目标接近及手动 / 自动模式切换</li><li>实现 720p30 H.264/RTSP 图传，实测显示端到端延迟约 240 ms</li><li>定位并解决电机压降导致图传重启、DMA 未启用导致状态回传异常</li></ul></section>
               </div>
 
-              <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>遥控解析、底盘控制与状态回传的任务组织。</figcaption></figure></details>
+              <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png?v=20260910" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>FreeRTOS 控制任务、遥控输入、视觉目标与状态回传关系。</figcaption></figure></details>
               <div class="secondary-video-grid" aria-label="途 S1 次要演示视频">
                 <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-direction-tracking-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/web/s1-direction-tracking-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
                 <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-control-demo-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/web/s1-control-demo-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
@@ -920,8 +918,8 @@
         <div class="about-grid">
           <article class="about-personal reveal"><p class="about-label">PERSONAL</p><p>电子信息工程 2027 届本科生，实践方向集中在嵌入式控制、嵌入式 Linux、边缘视觉与软硬件联调。关注功能如何真正运行在设备上，包括硬件接入、通信链路、板端部署、问题定位与整机验证。</p></article>
           <div class="about-facts reveal">
-            <section class="about-fact-section" aria-labelledby="education-title"><p class="about-label" id="education-title">EDUCATION</p><h3>龙岩学院</h3><p class="about-major">电子信息工程</p><p class="about-period">2023.09 — 2027.06</p></section>
-            <section class="about-fact-section" aria-labelledby="awards-title"><p class="about-label" id="awards-title">AWARDS</p><ol class="awards-list"><li><span class="award-index">01</span><span class="award-name">2025 中国机器人及人工智能大赛全国总决赛</span><strong class="award-result">二等奖</strong></li><li><span class="award-index">02</span><span class="award-name">2025 全国大学生电子设计竞赛 TI 杯福建赛区</span><strong class="award-result">三等奖</strong></li><li><span class="award-index">03</span><span class="award-name">2025 “西门子杯”中国智能制造挑战赛华东一赛区</span><strong class="award-result">三等奖</strong></li></ol></section>
+            <section class="about-fact-section education-card" aria-labelledby="education-title"><p class="about-label" id="education-title">EDUCATION</p><h3>龙岩学院</h3><p class="about-major">电子信息工程</p><p class="about-period">2023.09 — 2027.06</p></section>
+            <section class="about-fact-section awards-card" aria-labelledby="awards-title"><p class="about-label" id="awards-title">AWARDS</p><ol class="awards-list"><li><span class="award-index">01</span><span class="award-name">2025 中国机器人及人工智能大赛全国总决赛</span><strong class="award-result">二等奖</strong></li><li><span class="award-index">02</span><span class="award-name">2025 全国大学生电子设计竞赛 TI 杯福建赛区</span><strong class="award-result">三等奖</strong></li><li><span class="award-index">03</span><span class="award-name">2025 “西门子杯”中国智能制造挑战赛华东一赛区</span><strong class="award-result">三等奖</strong></li></ol></section>
           </div>
         </div>
       </div>

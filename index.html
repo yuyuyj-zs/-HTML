@@ -805,7 +805,7 @@
               </div>
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">YOLOv5 → RKNN</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">H.264 / RTSP</span></div>
               <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
-                <img src="assets/s1-end-to-end-architecture.png?v=20260911" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
+                <img src="assets/s1-end-to-end-architecture.png?v=20260911" alt="途 S1 智能小车端到端系统架构图" width="3600" height="1760" loading="lazy">
                 <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 展示遥控控制、STM32F407 / FreeRTOS、RV1106 视觉推理、目标结果回传及 H.264 / RTSP 视频链路。</figcaption>
               </figure>
 
@@ -980,7 +980,7 @@
       header.classList.toggle('scrolled', window.scrollY > 12);
       let currentId = '';
       trackedSections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) currentId = section.id;
+        if (window.scrollY >= section.offsetTop - 180) currentId = section.id;
       });
       navLinks.forEach(link => {
         const active = link.getAttribute('href') === `#${currentId}`;

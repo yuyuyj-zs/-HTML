@@ -329,7 +329,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
       gap: 14px;
       align-items: start;
     }
@@ -369,11 +369,12 @@
     .stack-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 14px;
+      align-items: start;
     }
 
     .stack-card {
-      padding: 28px;
+      padding: 22px 24px;
       transition: transform .2s ease, border-color .2s ease;
     }
 
@@ -385,7 +386,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 0 0 20px;
+      margin: 0 0 16px;
       font-size: 17px;
     }
 
@@ -401,14 +402,14 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 7px;
     }
 
     .tag {
       display: inline-flex;
       align-items: center;
-      min-height: 31px;
-      padding: 4px 10px;
+      min-height: 29px;
+      padding: 4px 9px;
       border: 1px solid var(--line);
       border-radius: 7px;
       color: #bdc9d3;
@@ -733,10 +734,10 @@
       <button class="menu-button" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="main-nav"><span></span></button>
       <nav aria-label="主导航">
         <ul class="nav-list" id="main-nav">
-          <li><a class="nav-link" href="#skills">技术与工程实践</a></li>
           <li><a class="nav-link" href="#experience">实习经历</a></li>
           <li><a class="nav-link" href="#projects">项目经历</a></li>
           <li><a class="nav-link" href="#about">关于我</a></li>
+          <li><a class="nav-link" href="#skills">技术能力</a></li>
           <li><a class="nav-link" href="#contact">联系方式</a></li>
         </ul>
       </nav>
@@ -761,24 +762,10 @@
     </section>
 
 
-    <section id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <header class="section-heading reveal">
-          <p class="section-index">01 / STACK</p>
-          <div><h2 id="skills-title">技术与工程实践</h2></div>
-        </header>
-        <div class="stack-grid">
-          <article class="stack-card reveal"><h3>MCU / RTOS</h3><div class="tags"><span class="tag">C</span><span class="tag">STM32F1 / F4</span><span class="tag">FreeRTOS</span><span class="tag">HAL / CubeMX</span><span class="tag">UART</span><span class="tag">DMA</span><span class="tag">TIM / PWM</span><span class="tag">ADC</span><span class="tag">SPI</span><span class="tag">I²C</span></div></article>
-          <article class="stack-card reveal"><h3>嵌入式 Linux / 通信</h3><div class="tags"><span class="tag">RV1106</span><span class="tag">Embedded Linux</span><span class="tag">交叉编译</span><span class="tag">Makefile</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">SBUS</span><span class="tag">RTSP / RTP</span><span class="tag">UDP</span></div></article>
-          <article class="stack-card tools-wide reveal"><h3>视觉部署 / 调试</h3><div class="tags"><span class="tag">RKNN</span><span class="tag">RGA</span><span class="tag">YOLOv5</span><span class="tag">示波器</span><span class="tag">逻辑分析仪</span><span class="tag">软硬件联调</span></div></article>
-        </div>
-      </div>
-    </section>
-
     <section id="experience" aria-labelledby="experience-title">
       <div class="container">
         <header class="section-heading reveal">
-          <p class="section-index">02 / EXPERIENCE</p>
+          <p class="section-index">01 / EXPERIENCE</p>
           <div><h2 id="experience-title">实习经历</h2><p>参与智能小车、无人机、图传、视觉检测和嵌入式设备调试相关研发工作。</p></div>
         </header>
         <article class="experience-card reveal">
@@ -800,7 +787,7 @@
     <section id="projects" aria-labelledby="projects-title">
       <div class="container">
         <header class="section-heading reveal">
-          <p class="section-index">03 / PROJECTS</p>
+          <p class="section-index">02 / PROJECTS</p>
           <div><h2 id="projects-title">核心项目</h2></div>
         </header>
 
@@ -818,7 +805,7 @@
               </div>
               <div class="project-tags tags"><span class="tag">STM32F407</span><span class="tag">FreeRTOS</span><span class="tag">RV1106</span><span class="tag">SC132GS</span><span class="tag">YOLOv5 → RKNN</span><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">H.264 / RTSP</span></div>
               <figure class="architecture-image" aria-labelledby="s1-architecture-caption">
-                <img src="assets/s1-end-to-end-architecture.png?v=20260910" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
+                <img src="assets/s1-end-to-end-architecture.png?v=20260911" alt="途 S1 智能小车端到端系统架构图" loading="lazy">
                 <figcaption id="s1-architecture-caption"><strong>端到端系统架构</strong> · 展示遥控控制、STM32F407 / FreeRTOS、RV1106 视觉推理、目标结果回传及 H.264 / RTSP 视频链路。</figcaption>
               </figure>
 
@@ -835,7 +822,7 @@
                 <section class="project-block"><h4>关键实现 / 工程结果</h4><ul class="clean-list"><li>完成 YOLOv5 → RKNN 640×640 INT8 模型部署，单帧推理约 57 ms</li><li>通过 RKIPC RGN/OSD 将检测框叠加至 RTSP 视频</li><li>实现视觉跟随、目标接近及手动 / 自动模式切换</li><li>实现 720p30 H.264/RTSP 图传，实测显示端到端延迟约 240 ms</li><li>定位并解决电机压降导致图传重启、DMA 未启用导致状态回传异常</li></ul></section>
               </div>
 
-              <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png?v=20260910" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>FreeRTOS 控制任务、遥控输入、视觉目标与状态回传关系。</figcaption></figure></details>
+              <details class="architecture-details"><summary>查看 FreeRTOS / MAVLink 控制链路详情</summary><figure><img src="assets/s1-freertos-flow.png?v=20260911" alt="途 S1 智能小车 FreeRTOS 控制任务流程图" loading="lazy"><figcaption>FreeRTOS 控制任务、遥控输入、视觉目标与状态回传关系。</figcaption></figure></details>
               <div class="secondary-video-grid" aria-label="途 S1 次要演示视频">
                 <figure class="project-media landscape-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-direction-tracking-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车方向追踪实机演示视频"><source src="assets/web/s1-direction-tracking-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>方向追踪演示 · 默认 1.25×</figcaption></figure>
                 <figure class="project-media portrait-video"><video class="project-video" controls playsinline preload="none" poster="assets/web/s1-control-demo-poster.jpg" data-playback-rate="1.25" aria-label="途 S1 智能小车控制实机演示视频"><source src="assets/web/s1-control-demo-web.mp4" type="video/mp4">当前浏览器不支持视频播放。</video><figcaption>控制演示 · 1.25×</figcaption></figure>
@@ -891,7 +878,7 @@
     <section id="other-projects" aria-labelledby="other-title">
       <div class="container">
         <header class="section-heading reveal">
-          <p class="section-index">04 / MORE</p>
+          <p class="section-index">03 / MORE</p>
           <div><h2 id="other-title">其他工程实践</h2></div>
         </header>
         <div class="projects-list">
@@ -912,7 +899,7 @@
     <section id="about" aria-labelledby="about-title">
       <div class="container">
         <header class="section-heading reveal">
-          <p class="section-index">05 / ABOUT</p>
+          <p class="section-index">04 / ABOUT</p>
           <div><h2 id="about-title">关于我</h2><p>关注真实设备上的嵌入式控制、通信与板端部署。</p></div>
         </header>
         <div class="about-grid">
@@ -921,6 +908,20 @@
             <section class="about-fact-section education-card" aria-labelledby="education-title"><p class="about-label" id="education-title">EDUCATION</p><h3>龙岩学院</h3><p class="about-major">电子信息工程</p><p class="about-period">2023.09 — 2027.06</p></section>
             <section class="about-fact-section awards-card" aria-labelledby="awards-title"><p class="about-label" id="awards-title">AWARDS</p><ol class="awards-list"><li><span class="award-index">01</span><span class="award-name">2025 中国机器人及人工智能大赛全国总决赛</span><strong class="award-result">二等奖</strong></li><li><span class="award-index">02</span><span class="award-name">2025 全国大学生电子设计竞赛 TI 杯福建赛区</span><strong class="award-result">三等奖</strong></li><li><span class="award-index">03</span><span class="award-name">2025 “西门子杯”中国智能制造挑战赛华东一赛区</span><strong class="award-result">三等奖</strong></li></ol></section>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-heading reveal">
+          <p class="section-index">05 / STACK</p>
+          <div><h2 id="skills-title">技术栈与工程能力</h2></div>
+        </header>
+        <div class="stack-grid">
+          <article class="stack-card reveal"><h3>MCU / RTOS</h3><div class="tags"><span class="tag">C</span><span class="tag">STM32F1 / F4</span><span class="tag">FreeRTOS</span><span class="tag">HAL / CubeMX</span><span class="tag">UART</span><span class="tag">DMA</span><span class="tag">TIM / PWM</span><span class="tag">ADC</span><span class="tag">SPI</span><span class="tag">I²C</span></div></article>
+          <article class="stack-card reveal"><h3>嵌入式 Linux / 边缘视觉</h3><div class="tags"><span class="tag">RV1106</span><span class="tag">Embedded Linux</span><span class="tag">RKNN</span><span class="tag">RGA</span><span class="tag">YOLOv5</span><span class="tag">交叉编译</span><span class="tag">Makefile</span><span class="tag">Shell</span></div></article>
+          <article class="stack-card tools-wide reveal"><h3>通信 / 调试</h3><div class="tags"><span class="tag">Modbus RTU</span><span class="tag">MAVLink</span><span class="tag">SBUS</span><span class="tag">RTSP / RTP</span><span class="tag">UDP</span><span class="tag">示波器</span><span class="tag">逻辑分析仪</span><span class="tag">软硬件联调</span></div></article>
         </div>
       </div>
     </section>
